@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I am a web developer passionate about creating beautiful and functional websites.</p>
+    </section>
+    
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="gallery">
+            <div class="project">Project 1</div>
+            <div class="project">Project 2</div>
+            <div class="project">Project 3</div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: example@example.com</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 My Portfolio</p>
+    </footer>
+</body>
+</html>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    header {
+        background: #333;
+        color: white;
+        padding: 1rem;
+    }
+    nav ul {
+        list-style: none;
+        padding: 0;
+    }
+    nav ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    section {
+        padding: 20px;
+    }
+    .gallery {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    .project {
+        background: #ddd;
+        padding: 20px;
+        border-radius: 5px;
+    }
+    footer {
+        background: #333;
+        color: white;
+        padding: 10px;
+        margin-top: 20px;
+    }
+</style>
