@@ -6,12 +6,17 @@
   <title>Saidur Rahman Riyadh | Portfolio</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     /* ===== BASIC RESET ===== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    :root {
+      --primary-color: #4CAF50; /* fallback */
     }
 
     body {
@@ -23,7 +28,7 @@
 
     /* ===== HEADER ===== */
     header {
-      background-color: #4CAF50;
+      background-color: var(--primary-color);
       color: white;
       padding: 20px;
       text-align: center;
@@ -77,10 +82,15 @@
       height: 250px;
       object-fit: cover;
       border-radius: 45%;
-      border: 4px solid #fff;
+      border: 4px solid var(--primary-color);
       display: block;
       margin: 20px auto;
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
     }
 
     /* ===== SECTIONS ===== */
@@ -91,7 +101,7 @@
     }
 
     h2 {
-      color: #4CAF50;
+      color: var(--primary-color);
       margin-bottom: 15px;
     }
 
@@ -107,10 +117,10 @@
 
     .slider {
       overflow: hidden;
-      max-width: 800px;
+      max-width: 420px; /* medium size */
       margin: 20px auto;
       border-radius: 12px;
-      border: 4px solid #4CAF50;
+      border: 4px solid var(--primary-color);
       box-shadow: 0 4px 16px rgba(0,0,0,0.2);
     }
 
@@ -124,9 +134,11 @@
     }
 
     .slide img {
-      width: 100%;
+      max-width: 400px; /* control image size */
       height: auto;
       display: block;
+      margin: 0 auto;
+      border-radius: 10px;
     }
 
     @keyframes scrollSlides {
@@ -153,13 +165,16 @@
         width: 150px;
         height: 200px;
       }
+      .slide img {
+        max-width: 90%;
+      }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>لَا إِلَٰهَ إِلَّا ٱللَّٰهُ مُحَمَّدٌ رَسُولُ ٱللَّٰهِ</h1>
+    <h1 lang="ar">لَا إِلَٰهَ إِلَّا ٱللَّٰهُ مُحَمَّدٌ رَسُولُ ٱللَّٰهِ</h1>
     <div class="scrolling-text">
       Hi, welcome to my portfolio. This portfolio update is in progress; everything hasn't been provided in detail yet.
     </div>
@@ -237,5 +252,12 @@
   <footer>
     <p>© 2025 Saidur Rahman Riyadh</p>
   </footer>
+
+  <!-- Dynamic Color Script -->
+  <script>
+    const colors = ['#3498db', '#e67e22', '#9b59b6', '#e74c3c', '#16a085', '#f39c12'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    document.documentElement.style.setProperty('--primary-color', randomColor);
+  </script>
 </body>
 </html>
