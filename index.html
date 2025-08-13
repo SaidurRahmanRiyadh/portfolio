@@ -5,39 +5,126 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Riyadh's Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
-<style>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     .profile-pic {
       width: 200px;
       height: 250px;
       object-fit: cover;
       border-radius: 45%;
-      border: 4px solid #4CAF50;
+      border: 4px solid #fff;
       display: block;
       margin: 20px auto;
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #4CAF50;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* === PHOTOBOOTH STYLES === */
+    #photobooth {
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .slider {
+      width: 90%;
+      max-width: 800px;
+      overflow: hidden;
+      margin: 20px auto;
+      border-radius: 12px;
+      border: 4px solid #4CAF50;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .slide-track {
+      display: flex;
+      width: 300%;
+      animation: slide 12s infinite;
+    }
+
+    .slide {
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @keyframes slide {
+      0%   { transform: translateX(0); }
+      33%  { transform: translateX(-100%); }
+      66%  { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
   </style>
-
-
-
-  
 </head>
+
 <body>
   <header>
-    <h1><center> لَا إِلَٰهَ إِلَّا ٱللَّٰهُ مُحَمَّدٌ رَسُولُ ٱللَّٰهِ </center> </h1>
-    <h2> <marquee scrollamount="15"> Hi, welcome to my portfolio.    This portfolio update is in progress;everything hasn't been
-    provided in detail yet. </marquee> </h2>
+    <h1><center>لَا إِلَٰهَ إِلَّا ٱللَّٰهُ مُحَمَّدٌ رَسُولُ ٱللَّٰهِ</center></h1>
+    <h2>
+      <marquee scrollamount="15">
+        Hi, welcome to my portfolio. This portfolio update is in progress; everything hasn't been provided in detail yet.
+      </marquee>
+    </h2>
     <img src="https://github.com/user-attachments/assets/e91d1893-c41b-4eef-82ac-8bad157ba93f"
          alt="Portrait of Saidur Rahman Riyadh"
-         class="profile-pic"
-      />
-   
+         class="profile-pic" />
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#photobooth">Photo Booth</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -46,18 +133,17 @@
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>I'm a final-year undergraduate student in Electronics and Telecommunication Engineering (ETE) at CUET. I have a passion for telecommunications, embedded systems, and defense technology. This portfolio showcases my skills and projects.</p>
+      <p>
+        I'm a final-year undergraduate student in Electronics and Telecommunication Engineering (ETE) at CUET. I have a passion for telecommunications, embedded systems, and defense technology. This portfolio showcases my skills and projects.
+      </p>
     </section>
 
     <section id="education">
       <h2>Education</h2>
       <ul>
-        <li><strong>Bachelor of Science(Batch-20):</strong> Department of ETE, CUET;
-          4349-Raozan,Chittagong</li>
-        <li><strong>HSC (2020):</strong> Saint Joseph Higher Secondary School; 
-          97-Asad Avenue ,Mohammadpur,Dhaka-1207</li>
-        <li><strong>SSC (2018):</strong> Government Science High School; 
-          Tejgaon,Farmgate,Dhaka-1215</li>
+        <li><strong>Bachelor of Science (Batch-20):</strong> Department of ETE, CUET; 4349-Raozan, Chittagong</li>
+        <li><strong>HSC (2020):</strong> Saint Joseph Higher Secondary School; 97-Asad Avenue, Mohammadpur, Dhaka-1207</li>
+        <li><strong>SSC (2018):</strong> Government Science High School; Tejgaon, Farmgate, Dhaka-1215</li>
       </ul>
     </section>
 
@@ -71,39 +157,40 @@
     <section id="projects">
       <h2>Projects</h2>
       <ul>
-      
         <li><strong>IoT-based Weather Station:</strong> Built with sensors and microcontrollers.</li>
         <li><strong>Digital Signal Processing Lab Tasks:</strong> Implemented filters and FFT in MATLAB.</li>
       </ul>
+    </section>
+
+    <!-- 📷 PHOTOBOOTH SECTION -->
+    <section id="photobooth">
+      <h2>Photo Booth</h2>
+      <div class="slider">
+        <div class="slide-track">
+          <div class="slide">
+            <img src="https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/kaptai-suptodhara%20jhorna.jpg?raw=true" alt="Kaptai Suptodhara">
+          </div>
+          <div class="slide">
+            <img src="https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/Military%20Museum.jpg?raw=true" alt="Military Museum">
+          </div>
+          <div class="slide">
+            <img src="https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/sitakunda.jpg?raw=true" alt="Sitakunda Hills">
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <p>Phone: +8809696344051</p>
       <p>Email: <a href="mailto:u2008030@student.cuet.ac.bd">u2008030@student.cuet.ac.bd</a></p>
-      <p>LinkedIn: <a href = "https://www.linkedin.com/in/saidur-rahman-riyadh-04578928a/">saidur-rahman-riyadh-04578928a </a> </p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/saidur-rahman-riyadh-04578928a/">saidur-rahman-riyadh-04578928a</a></p>
       <p>GitHub: <a href="https://github.com/SaidurRahmanRiyadh" target="_blank">SaidurRahmanRiyadh</a></p>
     </section>
   </main>
 
   <footer>
     <p>© 2025 Saidur Rahman Riyadh</p>
-
-    <div class="slider">
-    <div class="slide-track">
-      <div class="slide">
-        <img src="https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/kaptai-suptodhara%20jhorna.jpg?raw=true" alt="Kaptai Suptodhara">
-      </div>
-      <div class="slide">
-        <img src="https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/Military%20Museum.jpg?raw=true" alt="Military Museum">
-      </div>
-      <div class="slide">
-        <img src="https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/sitakunda.jpg?raw=true" alt="Sitakunda Hills">
-      </div>
-    </div>
-  </div>
-    
   </footer>
 </body>
 </html>
-
