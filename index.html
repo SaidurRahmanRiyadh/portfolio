@@ -1,146 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio - Saidur Rahman Riyadh</title>
-<style>
-  /* Global Styles */
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saidur Rahman Riyadh | Portfolio</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  header {
-    background-color: #87ceeb; /* Sky blue */
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-  }
-
-  nav {
-    background-color: #87ceeb; /* Sky blue */
-  }
-
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  nav ul li {
-    margin: 0 15px;
-  }
-
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  nav ul li a:hover {
-    text-decoration: underline;
-  }
-
-  section {
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  h1, h2 {
-    margin-bottom: 20px;
-  }
-
-  .profile-pic {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #87ceeb; /* Sky blue */
-  }
-
-  /* Slider Styles */
-  .slider {
-    max-width: 420px;
-    margin: 20px auto;
-    position: relative;
-    overflow: hidden;
-    border: 4px solid #87ceeb; /* Sky blue */
-    border-radius: 10px;
-  }
-
-  .slide-track {
-    display: flex;
-    animation: scroll 12s linear infinite;
-  }
-
-  .slide-track img {
-    max-width: 400px; /* Medium size */
-    height: auto;
-    border-radius: 10px;
-  }
-
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    33% { transform: translateX(-100%); }
-    66% { transform: translateX(-200%); }
-    100% { transform: translateX(0); }
-  }
-
-  /* Responsive */
-  @media (max-width: 500px) {
-    .slide-track img {
-      max-width: 90%;
+  <style>
+    /* ===== BASIC RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-  }
-</style>
+
+    :root {
+      --primary-color: #4CAF50; /* fallback */
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .scrolling-text {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: scroll 15s linear infinite;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== PROFILE IMAGE ===== */
+    .profile-pic {
+      width: 200px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 45%;
+      border: 4px solid var(--primary-color);
+      display: block;
+      margin: 20px auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    /* ===== PHOTO SLIDER ===== */
+    #photobooth {
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .slider {
+      overflow: hidden;
+      max-width: 420px; /* medium size */
+      margin: 20px auto;
+      border-radius: 12px;
+      border: 4px solid var(--primary-color);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    .slide-track {
+      display: flex;
+      animation: scrollSlides 15s linear infinite;
+    }
+
+    .slide {
+      flex: 0 0 100%;
+    }
+
+    .slide img {
+      max-width: 400px; /* control image size */
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
+
+    @keyframes scrollSlides {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      nav ul li {
+        margin: 5px 10px;
+      }
+      .profile-pic {
+        width: 150px;
+        height: 200px;
+      }
+      .slide img {
+        max-width: 90%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-
-<header>
-  <h1 lang="ar">لَا إِلَٰهَ إِلَّا ٱللَّٰهُ مُحَمَّدٌ رَسُولُ ٱللَّٰهِ</h1>
-  <img src="https://github.com/user-attachments/assets/e91d1893-c41b-4eef-82ac-8bad157ba93f" 
-       alt="Portrait of Saidur Rahman Riyadh" 
-       class="profile-pic">
-  <h2>Saidur Rahman Riyadh</h2>
-</header>
-
-<nav>
-  <ul>
-    <li><a href="#about">About Me</a></li>
-    <li><a href="#photobooth">Photo Booth</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<section id="about">
-  <h2>About Me</h2>
-  <p>Hello! I'm Saidur Rahman Riyadh, an undergraduate student at Chittagong University of Engineering and Technology, 
-     Department of Electronics and Telecommunication Engineering.</p>
-</section>
-
-<section id="photobooth">
-  <h2>Photo Booth</h2>
-  <div class="slider">
-    <div class="slide-track">
-      <img src="https://via.placeholder.com/400x300/87ceeb/ffffff?text=Photo+1" alt="Photo 1">
-      <img src="https://via.placeholder.com/400x300/4682b4/ffffff?text=Photo+2" alt="Photo 2">
-      <img src="https://via.placeholder.com/400x300/00bfff/ffffff?text=Photo+3" alt="Photo 3">
-      <img src="" alt="Photo 4">
+  <header>
+    <h1 lang="ar">لَا إِلَٰهَ إِلَّا ٱللَّٰهُ مُحَمَّدٌ رَسُولُ ٱللَّٰهِ</h1>
+    <div class="scrolling-text">
+      Hi, welcome to my portfolio. This portfolio update is in progress; everything hasn't been provided in detail yet.
     </div>
-  </div>
-</section>
+    <img src="https://github.com/user-attachments/assets/e91d1893-c41b-4eef-82ac-8bad157ba93f"
+         alt="Portrait of Saidur Rahman Riyadh"
+         class="profile-pic" />
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#photobooth">Photo Booth</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: saidur@example.com</p>
-  <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
-</section>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I'm a final-year undergraduate student in Electronics and Telecommunication Engineering (ETE) at CUET. I have a passion for telecommunications, embedded systems, and defense technology. This portfolio showcases my skills and projects.</p>
+    </section>
 
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>B.Sc. (Batch-20):</strong> Department of ETE, CUET; 4349-Raozan, Chittagong</li>
+        <li><strong>HSC (2020):</strong> Saint Joseph Higher Secondary School; 97-Asad Avenue, Mohammadpur, Dhaka-1207</li>
+        <li><strong>SSC (2018):</strong> Government Science High School; Tejgaon, Farmgate, Dhaka-1215</li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul>
+        <li><strong>Industrial Training:</strong> Teletalk Bangladesh Limited (18 May 2025)</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>IoT-based Weather Station:</strong> Built with sensors and microcontrollers.</li>
+        <li><strong>Digital Signal Processing Lab Tasks:</strong> Implemented filters and FFT in MATLAB.</li>
+      </ul>
+    </section>
+
+    <section id="photobooth">
+      <h2>Photo Booth</h2>
+      <div class="slider">
+        <div class="slide-track">
+          <div class="slide">
+            <img src="https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/kaptai-suptodhara%20jhorna.jpg?raw=true" alt="Kaptai Suptodhara">
+          </div>
+          <div class="slide">
+            <img src="https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/Military%20Museum.jpg?raw=true" alt="Military Museum">
+          </div>
+          <div class="slide">
+            <img src="https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/sitakunda.jpg?raw=true" alt="Sitakunda Hills">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>📞 Phone: <a href="tel:+8809696344051">+8809696344051</a></p>
+      <p>📧 Email: <a href="mailto:u2008030@student.cuet.ac.bd">u2008030@student.cuet.ac.bd</a></p>
+      <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/saidur-rahman-riyadh-04578928a/">saidur-rahman-riyadh-04578928a</a></p>
+      <p>💻 GitHub: <a href="https://github.com/SaidurRahmanRiyadh" target="_blank">SaidurRahmanRiyadh</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Saidur Rahman Riyadh</p>
+  </footer>
+
+  <!-- Dynamic Color Script -->
+  <script>
+    const colors = ['#3498db', '#e67e22', '#9b59b6', '#e74c3c', '#16a085', '#f39c12'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    document.documentElement.style.setProperty('--primary-color', randomColor);
+  </script>
 </body>
 </html>
