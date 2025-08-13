@@ -17,6 +17,58 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
   </style>
+
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #111;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .slider {
+      width: 90%;
+      max-width: 800px;
+      overflow: hidden;
+      border: 5px solid #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .slide-track {
+      display: flex;
+      width: 300%;
+      animation: slide 12s infinite linear;
+    }
+
+    .slide {
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @keyframes slide {
+      0%   { transform: translateX(0); }
+      33%  { transform: translateX(-100%); }
+      66%  { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+
+
   
 </head>
 <body>
@@ -85,6 +137,21 @@
 
   <footer>
     <p>© 2025 Saidur Rahman Riyadh</p>
+
+    <div class="slider">
+    <div class="slide-track">
+      <div class="slide">
+        <img src="https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/kaptai-suptodhara%20jhorna.jpg?raw=true" alt="Kaptai Suptodhara">
+      </div>
+      <div class="slide">
+        <img src="https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/Military%20Museum.jpg?raw=true" alt="Military Museum">
+      </div>
+      <div class="slide">
+        <img src="https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/sitakunda.jpg?raw=true" alt="Sitakunda Hills">
+      </div>
+    </div>
+  </div>
+    
   </footer>
 </body>
 </html>
