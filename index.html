@@ -81,22 +81,38 @@
       text-decoration: underline;
     }
 
-    /* ===== PROFILE IMAGE ===== */
-    .profile-pic {
-      width: 200px;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 10%;
-      border: 4px solid var(--primary-color);
-      display: block;
-      margin: 20px auto;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
-    }
 
-    .profile-pic:hover {
-      transform: scale(1.05);
-    }
+
+/* ===== PROFILE IMAGE ===== */
+.profile-pic {
+  width: 200px;
+  height: 200px; /* square for perfect circle */
+  object-fit: cover;
+  border-radius: 50%; /* circular */
+  border: 4px solid var(--primary-color);
+  display: block;
+  margin: 20px auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--primary-color), 0 0 40px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+
+
+    
 
     /* ===== SECTIONS ===== */
     section {
