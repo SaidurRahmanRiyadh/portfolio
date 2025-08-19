@@ -5,306 +5,288 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Saidur Rahman Riyadh | Portfolio</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
+    /* ===== Global Styles ===== */
     :root {
-      --primary-color: #4e9cff; 
-      --accent-color: #1da1f2; /* Twitter blue */
-      --header-color: #2c3e50;  
-      --dark-bg: #0f0f0f;
-      --soft-shadow: 0 10px 30px rgba(0,0,0,.1);
-      --ring: 0 0 0 3px rgba(78,156,255,.3);
+      --primary-color: #1e3c72;
+      --secondary-color: #2a5298;
+      --text-color: #333;
+      --bg-color: #fafafa;
     }
-
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #fff;
-      color: #333;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text-color);
+      background: var(--bg-color);
       line-height: 1.6;
     }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-    /* ===== HEADER / HERO ===== */
+    /* ===== Navigation ===== */
     header {
-      background: linear-gradient(120deg, var(--header-color), #1c2833);
-      color: white;
-      text-align: center;
-      padding: 70px 20px 40px;
-    }
-    header h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
-    header h1 span {
-      color: var(--primary-color);
-    }
-    .scrolling-text {
-      display: block;
-      font-size: 1.1rem;
-      font-weight: 300;
-      margin-bottom: 20px;
-      animation: scroll 14s linear infinite;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-    @keyframes scroll {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-    .profile-pic {
-      width: 180px; height: 180px; object-fit: cover; border-radius: 50%;
-      border: 5px solid var(--primary-color);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-      margin-top: 20px;
-      transition: transform .3s ease;
-    }
-    .profile-pic:hover { transform: scale(1.05); }
-
-    /* ===== NAVIGATION ===== */
-    nav {
-      background: #fff;
-      box-shadow: var(--soft-shadow);
       position: sticky;
       top: 0;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       z-index: 1000;
     }
-    nav ul {
-      display: flex; justify-content: center; list-style: none;
-      padding: 15px 0;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+      padding: 1rem 2rem;
     }
-    nav ul li { margin: 0 18px; }
+    nav .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
     nav ul li a {
-      color: #222; text-decoration: none; font-weight: 600; font-size: 1rem;
-      position: relative; padding-bottom: 4px;
+      font-weight: 500;
+      position: relative;
     }
     nav ul li a::after {
-      content: ""; position: absolute; left: 0; bottom: 0;
-      width: 0; height: 2px; background: var(--primary-color);
-      transition: width .3s ease;
-    }
-    nav ul li a:hover::after { width: 100%; }
-
-    /* ===== SECTIONS ===== */
-    section { padding: 70px 20px; max-width: 1100px; margin: auto; }
-    h2 {
-      font-size: 2rem;
-      color: var(--header-color);
-      margin-bottom: 25px;
-      border-left: 6px solid var(--primary-color);
-      padding-left: 12px;
-    }
-
-    /* ===== ABOUT ===== */
-    #about {
-      background: #f8f9fb;
-      border-radius: 14px;
-      padding: 60px 40px;
-      text-align: center;
-      box-shadow: var(--soft-shadow);
-    }
-    #about p {
-      max-width: 800px;
-      margin: auto;
-      font-size: 1.1rem;
-      color: #444;
-    }
-
-    /* ===== EDUCATION / EXPERIENCE ===== */
-    .timeline {
-      position: relative;
-      padding-left: 35px;
-      border-left: 3px solid var(--primary-color);
-    }
-    .timeline-item {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 30px;
-      box-shadow: var(--soft-shadow);
-      position: relative;
-      transition: transform .2s ease;
-    }
-    .timeline-item:hover { transform: translateY(-4px); }
-    .timeline-item::before {
       content: "";
       position: absolute;
-      left: -30px; top: 25px;
-      width: 16px; height: 16px;
-      border-radius: 50%;
-      background: var(--primary-color);
-      border: 3px solid #fff;
-      box-shadow: 0 0 0 2px var(--primary-color);
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 2px;
+      background: var(--secondary-color);
+      transition: width 0.3s;
     }
-    .timeline-item h3 {
-      font-size: 1.2rem; margin-bottom: 6px; color: #222;
+    nav ul li a:hover::after {
+      width: 100%;
     }
-    .timeline-item span { font-size: .95rem; color: #777; }
-    .timeline-item p { margin-top: 6px; color: #555; }
 
-    /* ===== CONTACT ===== */
-    #contact { background: #f9f9f9; text-align: center; }
-    .contact-wrapper { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 20px; }
-    .contact-info ul { list-style: none; padding: 0; text-align: left; }
-    .contact-info li { margin: 15px 0; font-size: 1.1rem; }
-    .contact-info i { margin-right: 10px; color: var(--primary-color); }
-    .contact-info a { color: var(--primary-color); text-decoration: none; font-weight: 600; }
-    .contact-info a:hover { color: var(--header-color); }
-    .contact-form {
-      flex: 1; min-width: 280px;
-      background: #fff; padding: 25px;
-      border-radius: 12px; box-shadow: var(--soft-shadow);
-    }
-    .contact-form input, .contact-form textarea {
-      width: 100%; padding: 12px; margin: 10px 0;
-      border: 1px solid #ccc; border-radius: 8px;
-    }
-    .contact-form button {
-      width: 100%; padding: 12px;
-      background: var(--primary-color); color: #fff;
-      border: none; border-radius: 8px;
-      font-size: 1.1rem; cursor: pointer;
-      transition: background .3s;
-    }
-    .contact-form button:hover { background: var(--header-color); }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: var(--dark-bg);
-      color: #ccc;
+    /* ===== Hero Section ===== */
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 90vh;
+      background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+      color: #fff;
       text-align: center;
-      padding: 25px 15px;
-      margin-top: 40px;
+      padding: 2rem;
     }
-    .footer-links a {
-      margin: 0 12px; color: #ccc; font-size: 1.4rem;
-      transition: color .3s;
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
     }
-    .footer-links a:hover { color: var(--primary-color); }
-    footer p { font-size: .9rem; margin-top: 12px; }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #fff;
+      color: var(--primary-color);
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .hero .btn:hover {
+      background: #f0f0f0;
+    }
+
+    /* ===== About Section ===== */
+    #about {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding: 4rem 2rem;
+      align-items: center;
+    }
+    #about img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    #about h2 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    #about p {
+      margin-bottom: 1rem;
+    }
+
+    /* ===== Experience Section ===== */
+    #experience {
+      max-width: 1100px;
+      margin: auto;
+      padding: 4rem 2rem;
+    }
+    #experience h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--primary-color);
+    }
+    .exp-item {
+      background: #fff;
+      padding: 1.5rem;
+      border-left: 4px solid var(--secondary-color);
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .exp-item h3 {
+      margin-top: 0;
+      color: var(--secondary-color);
+    }
+    .exp-item span {
+      font-style: italic;
+      color: #777;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== Contact Section ===== */
+    #contact {
+      background: #fff;
+      padding: 4rem 2rem;
+    }
+    #contact h2 {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+    }
+    #contact form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    #contact input, #contact textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    #contact button {
+      padding: 0.8rem;
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #contact button:hover {
+      background: var(--secondary-color);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--primary-color);
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    .social-links {
+      margin-top: 1rem;
+    }
+    .social-links a {
+      margin: 0 10px;
+      color: #fff;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    .social-links a:hover {
+      color: #dcdcdc;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      #about {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
   </style>
 </head>
-
 <body>
-  <!-- ===== HEADER / HERO ===== -->
+  <!-- ===== Navigation ===== -->
   <header>
-    <h1>Saidur Rahman <span>Riyadh</span></h1>
-    <div class="scrolling-text">
-      Final-year ETE student at CUET • Passion for Telecom • Embedded Systems • Defense Technology
-    </div>
-    <img src="https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/profile.jpg?raw=true" alt="Portrait of Riyadh" class="profile-pic" />
+    <nav>
+      <div class="logo">Riyadh</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- ===== NAVIGATION ===== -->
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#photobooth">Photo Booth</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <!-- ABOUT -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I’m <strong>Md. Saidur Rahman Riyadh</strong>, a final-year undergraduate student in 
-        <strong>Electronics and Telecommunication Engineering</strong> (ETE) at CUET.  
-        My interests span <strong>telecommunications, embedded systems, and defense technology</strong>.  
-        This portfolio reflects my journey, showcasing my education, professional experience, and projects.
-      </p>
-    </section>
-
-    <!-- EDUCATION -->
-    <section id="education">
-      <h2>Education</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <h3>B.Sc. in Electronics & Telecommunication Engineering</h3>
-          <span>Chittagong University of Engineering & Technology (CUET) | Batch-20</span>
-          <p>4349-Raozan, Chittagong</p>
-        </div>
-        <div class="timeline-item">
-          <h3>Higher Secondary Certificate (HSC)</h3>
-          <span>Saint Joseph Higher Secondary School | 2020</span>
-          <p>97-Asad Avenue, Mohammadpur, Dhaka-1207</p>
-        </div>
-        <div class="timeline-item">
-          <h3>Secondary School Certificate (SSC)</h3>
-          <span>Govt. Science High School | 2018</span>
-          <p>Tejgaon, Farmgate, Dhaka-1215</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <h3>Industrial Training</h3>
-          <span>Teletalk Bangladesh Limited | May 2025</span>
-          <p>Hands-on experience in telecom operations and infrastructure.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>IoT-based Weather Station:</strong> Designed with sensors and microcontrollers for real-time monitoring.</li>
-        <li><strong>Digital Signal Processing Tasks:</strong> Implemented filters and FFT in MATLAB.</li>
-      </ul>
-    </section>
-
-    <!-- PHOTO BOOTH (your existing design) -->
-    <section id="photobooth">
-      <h2>Photo Booth</h2>
-      <p style="color:#555;">(Gallery code remains as in your version — kept professional)</p>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <div class="contact-wrapper">
-        <div class="contact-info">
-          <ul>
-            <li><i class="fas fa-phone"></i> <a href="tel:+8809696344051">+8809696344051</a></li>
-            <li><i class="fas fa-envelope"></i> <a href="mailto:u2008030@student.cuet.ac.bd">u2008030@student.cuet.ac.bd</a></li>
-            <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/saidur-rahman-riyadh-04578928a/" target="_blank">LinkedIn</a></li>
-            <li><i class="fab fa-github"></i> <a href="https://github.com/SaidurRahmanRiyadh" target="_blank">GitHub</a></li>
-            <li><i class="fab fa-x-twitter"></i> <a href="https://x.com/Riyadh_Rahman30?s=08" target="_blank">Twitter/X</a></li>
-          </ul>
-        </div>
-        <div class="contact-form">
-          <form action="https://formspree.io/f/yourFormID" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-links">
-      <a href="https://www.linkedin.com/in/saidur-rahman-riyadh-04578928a/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/SaidurRahmanRiyadh" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://x.com/Riyadh_Rahman30?s=08" target="_blank"><i class="fab fa-x-twitter"></i></a>
-      <a href="mailto:u2008030@student.cuet.ac.bd"><i class="fas fa-envelope"></i></a>
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div>
+      <h1>Hi, I'm Saidur Rahman Riyadh</h1>
+      <p>Aspiring Engineer | Passionate Learner | Problem Solver</p>
+      <a href="#about" class="btn">Learn More</a>
     </div>
-    <p>&copy; <span id="year"></span> Saidur Rahman Riyadh | All Rights Reserved</p>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section id="about">
+    <img src="profile.jpg" alt="Profile Picture of Riyadh">
+    <div>
+      <h2>About Me</h2>
+      <p>I am Saidur Rahman Riyadh, a passionate and driven individual with a deep interest in engineering, technology, and problem-solving. I thrive on continuous learning and aim to contribute meaningfully to innovative projects.</p>
+      <p>Beyond academics, I focus on professional development, creativity, and building solutions that bring value. My goal is to combine technical knowledge with leadership skills for impactful contributions.</p>
+    </div>
+  </section>
+
+  <!-- ===== Experience ===== -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="exp-item">
+      <h3>Software Development Intern</h3>
+      <span>XYZ Company | 2024</span>
+      <p>Worked on building scalable web applications, collaborating with senior developers to design modern solutions.</p>
+    </div>
+    <div class="exp-item">
+      <h3>Research Assistant</h3>
+      <span>CUET | 2023</span>
+      <p>Assisted in AI research focused on optimization and data-driven solutions for real-world problems.</p>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/your-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© <span id="year"></span> Saidur Rahman Riyadh. All Rights Reserved.</p>
+    <div class="social-links">
+      <a href="https://github.com/" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+      <a href="https://x.com/Riyadh_Rahman30?s=08" target="_blank">Twitter/X</a>
+    </div>
   </footer>
 
   <script>
