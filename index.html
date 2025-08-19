@@ -19,7 +19,7 @@
     :root {
       --primary-color: #87CEEB; /* Sky Blue */
       --header-color: #4CAF50; /* Green */
-      --dark-bg: #222;
+      --dark-bg: #111;
     }
 
     body {
@@ -125,6 +125,71 @@
 
     ul {
       padding-left: 20px;
+    }
+
+    /* ===== EDUCATION SECTION ===== */
+    #education {
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 50px 20px;
+    }
+
+    .edu-timeline {
+      position: relative;
+      margin: 20px 0;
+      padding-left: 30px;
+      border-left: 3px solid var(--primary-color);
+    }
+
+    .edu-item {
+      margin-bottom: 30px;
+      padding: 15px 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+
+    .edu-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .edu-item::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: -34px;
+      width: 14px;
+      height: 14px;
+      background: var(--primary-color);
+      border: 3px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px var(--primary-color);
+    }
+
+    .edu-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: #222;
+    }
+
+    .edu-item span {
+      display: block;
+      font-size: 0.95rem;
+      color: #777;
+      margin-bottom: 8px;
+    }
+
+    .edu-item p {
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .edu-icon {
+      color: var(--header-color);
+      margin-right: 8px;
     }
 
     /* ===== PHOTO SLIDER ===== */
@@ -323,14 +388,30 @@
       <p>I'm a final-year undergraduate student in Electronics and Telecommunication Engineering (ETE) at CUET. I have a passion for telecommunications, embedded systems, and defense technology. This portfolio showcases my skills and projects.</p>
     </section>
 
+    <!-- ===== CLASSIC EDUCATION SECTION ===== -->
     <section id="education">
       <h2>Education</h2>
-      <ul>
-        <li><strong>B.Sc. (Batch-20):</strong> Department of Electronics and Telecommunication Engineering (ETE) at 
-          Chittagong University of Engineering and Technology (CUET); 4349-Raozan, Chittagong</li>
-        <li><strong>HSC (2020):</strong> Saint Joseph Higher Secondary School; 97-Asad Avenue, Mohammadpur, Dhaka-1207</li>
-        <li><strong>SSC (2018):</strong> Govt. Science High School; Tejgaon, Farmgate, Dhaka-1215</li>
-      </ul>
+      <div class="edu-timeline">
+
+        <div class="edu-item">
+          <h3><i class="fas fa-graduation-cap edu-icon"></i>B.Sc. in Electronics & Telecommunication Engineering</h3>
+          <span>Chittagong University of Engineering & Technology (CUET) | Batch-20</span>
+          <p>4349-Raozan, Chittagong</p>
+        </div>
+
+        <div class="edu-item">
+          <h3><i class="fas fa-school edu-icon"></i>Higher Secondary Certificate (HSC)</h3>
+          <span>Saint Joseph Higher Secondary School | 2020</span>
+          <p>97-Asad Avenue, Mohammadpur, Dhaka-1207</p>
+        </div>
+
+        <div class="edu-item">
+          <h3><i class="fas fa-school edu-icon"></i>Secondary School Certificate (SSC)</h3>
+          <span>Govt. Science High School | 2018</span>
+          <p>Tejgaon, Farmgate, Dhaka-1215</p>
+        </div>
+
+      </div>
     </section>
 
     <section id="experience">
@@ -400,7 +481,10 @@
       <a href="https://github.com/SaidurRahmanRiyadh" target="_blank"><i class="fab fa-github"></i></a>
       <a href="mailto:u2008030@student.cuet.ac.bd"><i class="fas fa-envelope"></i></a>
     </div>
-    <p>© 2025 Saidur Rahman Riyadh | All Rights Reserved</p>
+    <p>&copy; <span id="year"></span> Saidur Rahman Riyadh | All Rights Reserved</p>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </footer>
 </body>
 </html>
