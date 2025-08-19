@@ -10,16 +10,14 @@
 
   <style>
     /* ===== BASIC RESET ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --primary-color: #87CEEB; /* Sky Blue */
-      --header-color: #4CAF50; /* Green */
+      --header-color: #4CAF50;  /* Green */
       --dark-bg: #111;
+      --soft-shadow: 0 10px 30px rgba(0,0,0,.08);
+      --ring: 0 0 0 3px rgba(135,206,235,.35);
     }
 
     body {
@@ -37,10 +35,7 @@
       text-align: center;
     }
 
-    header h1 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
+    header h1 { font-size: 1.5rem; margin-bottom: 10px; }
 
     .scrolling-text {
       display: inline-block;
@@ -64,299 +59,217 @@
       top: 0;
       z-index: 1000;
     }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    nav ul li {
-      margin: 0 15px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
+    nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; }
+    nav ul li { margin: 0 15px; }
+    nav ul li a { color: white; text-decoration: none; font-weight: 600; }
+    nav ul li a:hover { text-decoration: underline; }
 
     /* ===== PROFILE IMAGE ===== */
     .profile-pic {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid var(--primary-color);
-      display: block;
-      margin: 20px auto;
+      width: 200px; height: 200px; object-fit: cover; border-radius: 50%;
+      border: 4px solid var(--primary-color); display: block; margin: 20px auto;
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform .3s ease, box-shadow .3s ease;
     }
-
-    .profile-pic:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px var(--primary-color), 0 0 40px rgba(0,0,0,0.2);
-    }
-
-    @media (max-width: 600px) {
-      .profile-pic {
-        width: 150px;
-        height: 150px;
-      }
-    }
+    .profile-pic:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--primary-color), 0 0 40px rgba(0,0,0,0.2); }
+    @media (max-width: 600px) { .profile-pic { width: 150px; height: 150px; } }
 
     /* ===== SECTIONS ===== */
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+    section { padding: 40px 20px; max-width: 1100px; margin: auto; }
+    h2 { color: var(--primary-color); margin-bottom: 15px; }
+    ul { padding-left: 20px; }
 
-    h2 {
-      color: var(--primary-color);
-      margin-bottom: 15px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    /* ===== EDUCATION SECTION ===== */
+    /* ===== EDUCATION (kept as-is from your previous style) ===== */
     #education {
-      background: #f9f9f9;
-      border-radius: 12px;
-      padding: 50px 20px;
+      background: #f9f9f9; border-radius: 12px; padding: 50px 20px;
     }
-
-    .edu-timeline {
-      position: relative;
-      margin: 20px 0;
-      padding-left: 30px;
-      border-left: 3px solid var(--primary-color);
-    }
-
+    .edu-timeline { position: relative; margin: 20px 0; padding-left: 30px; border-left: 3px solid var(--primary-color); }
     .edu-item {
-      margin-bottom: 30px;
-      padding: 15px 20px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      position: relative;
+      margin-bottom: 30px; padding: 15px 20px; background: #fff; border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: transform .2s ease, box-shadow .2s ease; position: relative;
     }
-
-    .edu-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-    }
-
+    .edu-item:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
     .edu-item::before {
-      content: "";
-      position: absolute;
-      top: 20px;
-      left: -34px;
-      width: 14px;
-      height: 14px;
-      background: var(--primary-color);
-      border: 3px solid #fff;
-      border-radius: 50%;
-      box-shadow: 0 0 0 2px var(--primary-color);
+      content: ""; position: absolute; top: 20px; left: -34px; width: 14px; height: 14px; background: var(--primary-color);
+      border: 3px solid #fff; border-radius: 50%; box-shadow: 0 0 0 2px var(--primary-color);
     }
-
-    .edu-item h3 {
-      font-size: 1.2rem;
-      margin-bottom: 5px;
-      color: #222;
-    }
-
-    .edu-item span {
-      display: block;
-      font-size: 0.95rem;
-      color: #777;
-      margin-bottom: 8px;
-    }
-
-    .edu-item p {
-      font-size: 1rem;
-      color: #444;
-    }
-
-    .edu-icon {
-      color: var(--header-color);
-      margin-right: 8px;
-    }
-
-    /* ===== PHOTO SLIDER ===== */
-    #photobooth {
-      background-color: #f4f4f4;
-      text-align: center;
-    }
-
-    .slider {
-      overflow: hidden;
-      max-width: 420px;
-      margin: 20px auto;
-      border-radius: 12px;
-      border: 4px solid var(--primary-color);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    }
-
-    .slide-track {
-      display: flex;
-      animation: scrollSlides 15s linear infinite;
-    }
-
-    .slide {
-      flex: 0 0 100%;
-    }
-
-    .slide img {
-      max-width: 400px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      border-radius: 10px;
-    }
-
-    @keyframes scrollSlides {
-      0% { transform: translateX(0); }
-      25% { transform: translateX(-100%); }
-      50% { transform: translateX(-200%); }
-      75% { transform: translateX(-300%); }
-      100% { transform: translateX(0); }
-    }
+    .edu-item h3 { font-size: 1.2rem; margin-bottom: 5px; color: #222; }
+    .edu-item span { display: block; font-size: .95rem; color: #777; margin-bottom: 8px; }
+    .edu-item p { font-size: 1rem; color: #444; }
+    .edu-icon { color: var(--header-color); margin-right: 8px; }
 
     /* ===== CONTACT SECTION ===== */
-    #contact {
-      background: #f9f9f9;
-      padding: 60px 20px;
-      text-align: center;
+    #contact { background: #f9f9f9; padding: 60px 20px; text-align: center; }
+    #contact h2 { font-size: 2rem; margin-bottom: 20px; color: var(--primary-color); }
+    .contact-wrapper { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1000px; margin: auto; }
+    .contact-info { flex: 1; min-width: 280px; text-align: left; }
+    .contact-info ul { list-style: none; padding: 0; }
+    .contact-info li { margin: 15px 0; font-size: 1.1rem; }
+    .contact-info i { margin-right: 10px; color: var(--header-color); }
+    .contact-info a { color: var(--primary-color); text-decoration: none; font-weight: 600; }
+    .contact-info a:hover { text-decoration: underline; color: #000; }
+    .contact-form { flex: 1; min-width: 280px; background: #fff; padding: 20px; border-radius: 12px; box-shadow: var(--soft-shadow); }
+    .contact-form input, .contact-form textarea {
+      width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;
     }
-
-    #contact h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: var(--primary-color);
-    }
-
-    .contact-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .contact-info {
-      flex: 1;
-      min-width: 280px;
-      text-align: left;
-    }
-
-    .contact-info ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .contact-info li {
-      margin: 15px 0;
-      font-size: 1.1rem;
-    }
-
-    .contact-info i {
-      margin-right: 10px;
-      color: var(--header-color);
-    }
-
-    .contact-info a {
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .contact-info a:hover {
-      text-decoration: underline;
-      color: #000;
-    }
-
-    .contact-form {
-      flex: 1;
-      min-width: 280px;
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-
     .contact-form button {
-      width: 100%;
-      padding: 12px;
-      background: var(--primary-color);
-      border: none;
-      color: #fff;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
+      width: 100%; padding: 12px; background: var(--primary-color); border: none; color: #fff; font-size: 1.1rem;
+      border-radius: 8px; cursor: pointer; transition: background .3s;
     }
-
-    .contact-form button:hover {
-      background: var(--header-color);
-    }
+    .contact-form button:hover { background: var(--header-color); }
 
     /* ===== FOOTER ===== */
-    footer {
-      background: var(--dark-bg);
-      color: #ccc;
-      text-align: center;
-      padding: 25px 15px;
-      margin-top: 40px;
-    }
-
-    .footer-links {
-      margin-bottom: 15px;
-    }
-
-    .footer-links a {
-      margin: 0 10px;
-      color: #ccc;
-      font-size: 1.2rem;
-      transition: color 0.3s;
-    }
-
-    .footer-links a:hover {
-      color: var(--primary-color);
-    }
-
-    footer p {
-      font-size: 0.9rem;
-    }
+    footer { background: var(--dark-bg); color: #ccc; text-align: center; padding: 25px 15px; margin-top: 40px; }
+    .footer-links { margin-bottom: 15px; }
+    .footer-links a { margin: 0 10px; color: #ccc; font-size: 1.2rem; transition: color .3s; }
+    .footer-links a:hover { color: var(--primary-color); }
+    footer p { font-size: .9rem; }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 600px) {
-      nav ul li {
-        margin: 5px 10px;
-      }
-      .slide img {
-        max-width: 90%;
-      }
+      nav ul li { margin: 5px 10px; }
+    }
+
+    /* ===========================
+       PROFESSIONAL PHOTO BOOTH
+       =========================== */
+
+    /* Section shell */
+    #photobooth {
+      background: #fff;
+    }
+    #photobooth .intro {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    #photobooth h2 {
+      margin-bottom: 8px;
+    }
+    .booth-actions {
+      display: flex; gap: 10px; flex-wrap: wrap;
+    }
+    .btn {
+      appearance: none; border: 1px solid #cfd8dc; background: #fff; color: #222;
+      padding: 10px 14px; border-radius: 10px; font-weight: 600; cursor: pointer;
+      box-shadow: var(--soft-shadow); transition: transform .12s ease, box-shadow .12s ease, border-color .2s ease;
+    }
+    .btn:focus { outline: none; box-shadow: var(--ring); }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.primary { background: var(--primary-color); color: #073b4c; border-color: transparent; }
+    .btn.ghost   { background: #fff; }
+    .btn i { margin-right: 8px; }
+
+    /* Gallery grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .card {
+      grid-column: span 4; /* 3 per row on desktop */
+      background: #fff; border-radius: 14px; overflow: hidden; box-shadow: var(--soft-shadow);
+      position: relative; transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0,0,0,.12); }
+    .card button {
+      display: block; width: 100%; border: none; background: transparent; padding: 0; cursor: pointer;
+    }
+    .card img {
+      width: 100%; height: 240px; object-fit: cover; display: block;
+      filter: saturate(1.02);
+      transition: transform .5s ease;
+    }
+    .card:hover img { transform: scale(1.03); }
+    .card .meta {
+      padding: 12px 14px 14px;
+    }
+    .card .title {
+      font-weight: 700; font-size: 1rem; color: #1b262c; margin-bottom: 6px;
+    }
+    .card .caption {
+      font-size: .92rem; color: #5f6c75;
+    }
+
+    @media (max-width: 900px) {
+      .card { grid-column: span 6; } /* 2 per row */
+      .card img { height: 220px; }
+    }
+    @media (max-width: 580px) {
+      .card { grid-column: span 12; } /* 1 per row */
+      .card img { height: 220px; }
+    }
+
+    /* Lightbox (classic + minimal) */
+    .lightbox {
+      position: fixed; inset: 0; background: rgba(0,0,0,.92);
+      display: none; align-items: center; justify-content: center;
+      z-index: 2000;
+    }
+    .lightbox.open { display: flex; }
+
+    .lb-stage {
+      position: relative; width: min(96vw, 1100px); height: min(86vh, 720px);
+      display: grid; grid-template-rows: 1fr auto; gap: 10px;
+    }
+    .lb-media {
+      position: relative; overflow: hidden; background: #0b0b0b; border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    }
+    .lb-media img {
+      position: absolute; inset: 0; margin: auto; max-width: 100%; max-height: 100%;
+      width: auto; height: auto; object-fit: contain; user-select: none;
+    }
+    .lb-controls {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .lb-left, .lb-right { display: flex; align-items: center; gap: 8px; }
+    .icon-btn {
+      width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255,255,255,.2);
+      background: rgba(255,255,255,.08); color: #fff; display: inline-flex; align-items: center;
+      justify-content: center; cursor: pointer; transition: transform .12s ease, background .2s ease, border-color .2s ease;
+    }
+    .icon-btn:hover { transform: translateY(-1px); background: rgba(255,255,255,.14); }
+    .icon-btn:focus { outline: none; box-shadow: 0 0 0 3px rgba(135,206,235,.35); }
+    .icon-btn[aria-pressed="true"] { background: rgba(135,206,235,.3); border-color: rgba(135,206,235,.6); color:#001219; }
+
+    .lb-caption {
+      color: #e6f2f8; font-size: .98rem;
+    }
+    .lb-index {
+      color: #b0c7d1; font-weight: 700; letter-spacing: .03em;
+    }
+
+    /* Prev/Next big zones */
+    .nav-zone {
+      position: absolute; top: 0; bottom: 0; width: 50%; cursor: pointer;
+    }
+    .nav-prev { left: 0; }
+    .nav-next { right: 0; }
+
+    /* Thumbnails row */
+    .thumbs {
+      display: flex; gap: 8px; overflow-x: auto; padding-top: 6px;
+      scrollbar-width: thin;
+    }
+    .thumb {
+      flex: 0 0 auto; width: 72px; height: 54px; border-radius: 8px; overflow: hidden;
+      border: 2px solid transparent; opacity: .7; transition: opacity .2s ease, border-color .2s ease, transform .12s ease;
+      background: #0f0f0f;
+    }
+    .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .thumb.active { border-color: var(--primary-color); opacity: 1; transform: translateY(-1px); }
+
+    /* Accessibility helpers */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .scrolling-text { animation: none; }
+      .card:hover img { transform: none; }
+      .btn:hover, .icon-btn:hover { transform: none; }
     }
   </style>
 </head>
@@ -388,32 +301,29 @@
       <p>I'm a final-year undergraduate student in Electronics and Telecommunication Engineering (ETE) at CUET. I have a passion for telecommunications, embedded systems, and defense technology. This portfolio showcases my skills and projects.</p>
     </section>
 
-    <!-- ===== CLASSIC EDUCATION SECTION ===== -->
+    <!-- ===== EDUCATION ===== -->
     <section id="education">
       <h2>Education</h2>
       <div class="edu-timeline">
-
         <div class="edu-item">
           <h3><i class="fas fa-graduation-cap edu-icon"></i>B.Sc. in Electronics & Telecommunication Engineering</h3>
           <span>Chittagong University of Engineering & Technology (CUET) | Batch-20</span>
           <p>4349-Raozan, Chittagong</p>
         </div>
-
         <div class="edu-item">
           <h3><i class="fas fa-school edu-icon"></i>Higher Secondary Certificate (HSC)</h3>
           <span>Saint Joseph Higher Secondary School | 2020</span>
           <p>97-Asad Avenue, Mohammadpur, Dhaka-1207</p>
         </div>
-
         <div class="edu-item">
           <h3><i class="fas fa-school edu-icon"></i>Secondary School Certificate (SSC)</h3>
           <span>Govt. Science High School | 2018</span>
           <p>Tejgaon, Farmgate, Dhaka-1215</p>
         </div>
-
       </div>
     </section>
 
+    <!-- ===== EXPERIENCE ===== -->
     <section id="experience">
       <h2>Experience</h2>
       <ul>
@@ -421,6 +331,7 @@
       </ul>
     </section>
 
+    <!-- ===== PROJECTS ===== -->
     <section id="projects">
       <h2>Projects</h2>
       <ul>
@@ -429,27 +340,72 @@
       </ul>
     </section>
 
-    <section id="photobooth">
-      <h2>Photo Booth</h2>
-      <div class="slider">
-        <div class="slide-track">
-          <div class="slide">
-            <img src="https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/Coxsbazar.JPG?raw=true" alt="Cox's Bazar">
-          </div>
-          <div class="slide">
-            <img src="https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/kaptai-suptodhara%20jhorna.jpg?raw=true" alt="Kaptai Suptodhara">
-          </div>
-          <div class="slide">
-            <img src="https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/Military%20Museum.jpg?raw=true" alt="Military Museum">
-          </div>
-          <div class="slide">
-            <img src="https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/sitakunda.jpg?raw=true" alt="Sitakunda Hills">
-          </div>
+    <!-- =========================================
+         PROFESSIONAL + CLASSIC PHOTO BOOTH SYSTEM
+         ========================================= -->
+    <section id="photobooth" aria-labelledby="photobooth-title">
+      <div class="intro">
+        <h2 id="photobooth-title">Photo Booth</h2>
+        <div class="booth-actions">
+          <button class="btn ghost" id="toggleAutoplay" aria-pressed="false" title="Play/Pause slideshow">
+            <i class="fa-solid fa-play"></i> Slideshow
+          </button>
+          <button class="btn ghost" id="toggleFullscreen" title="Enter fullscreen">
+            <i class="fa-solid fa-expand"></i> Fullscreen
+          </button>
+          <button class="btn primary" id="openLightbox" title="Open first image">
+            <i class="fa-regular fa-images"></i> View All
+          </button>
         </div>
+      </div>
+
+      <!-- Gallery Grid (thumbnails) -->
+      <div class="gallery" id="gallery" aria-live="polite">
+        <!-- Cards are injected by JS from the photos[] list -->
+      </div>
+
+      <!-- Accessible Lightbox -->
+      <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lb-caption">
+        <div class="lb-stage">
+          <div class="lb-media" id="lb-media">
+            <div class="nav-zone nav-prev" id="navPrev" aria-label="Previous image" tabindex="0"></div>
+            <div class="nav-zone nav-next" id="navNext" aria-label="Next image" tabindex="0"></div>
+            <img id="lb-image" alt="" draggable="false">
+          </div>
+
+          <div class="lb-controls">
+            <div class="lb-left">
+              <button class="icon-btn" id="closeLb" aria-label="Close (Esc)">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+              <button class="icon-btn" id="prevBtn" aria-label="Previous (←)">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button class="icon-btn" id="nextBtn" aria-label="Next (→)">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+              <button class="icon-btn" id="playBtn" aria-pressed="false" aria-label="Play slideshow (Space)">
+                <i class="fa-solid fa-play"></i>
+              </button>
+              <button class="icon-btn" id="downloadBtn" aria-label="Open original image">
+                <i class="fa-solid fa-download"></i>
+              </button>
+            </div>
+            <div class="lb-right" style="gap:14px; flex:1; justify-content: flex-end;">
+              <span class="lb-index" id="lb-index">1 / 1</span>
+              <span class="lb-caption" id="lb-caption" aria-live="polite">—</span>
+            </div>
+          </div>
+
+          <div class="thumbs" id="lb-thumbs" aria-label="Thumbnails"></div>
+        </div>
+        <span class="sr-only" id="lb-sr-help">
+          Use Left/Right arrow keys to navigate, Space to play/pause, and Esc to close.
+        </span>
       </div>
     </section>
 
-    <!-- ===== CONTACT SECTION ===== -->
+    <!-- ===== CONTACT ===== -->
     <section id="contact">
       <h2>Contact Me</h2>
       <div class="contact-wrapper">
@@ -457,8 +413,8 @@
           <ul>
             <li><i class="fas fa-phone"></i> <a href="tel:+8809696344051">+8809696344051</a></li>
             <li><i class="fas fa-envelope"></i> <a href="mailto:u2008030@student.cuet.ac.bd">u2008030@student.cuet.ac.bd</a></li>
-            <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/saidur-rahman-riyadh-04578928a/" target="_blank">LinkedIn Profile</a></li>
-            <li><i class="fab fa-github"></i> <a href="https://github.com/SaidurRahmanRiyadh" target="_blank">GitHub</a></li>
+            <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/saidur-rahman-riyadh-04578928a/" target="_blank" rel="noopener">LinkedIn Profile</a></li>
+            <li><i class="fab fa-github"></i> <a href="https://github.com/SaidurRahmanRiyadh" target="_blank" rel="noopener">GitHub</a></li>
           </ul>
         </div>
 
@@ -477,14 +433,251 @@
   <!-- ===== FOOTER ===== -->
   <footer>
     <div class="footer-links">
-      <a href="https://www.linkedin.com/in/saidur-rahman-riyadh-04578928a/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/SaidurRahmanRiyadh" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/saidur-rahman-riyadh-04578928a/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/SaidurRahmanRiyadh" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
       <a href="mailto:u2008030@student.cuet.ac.bd"><i class="fas fa-envelope"></i></a>
     </div>
     <p>&copy; <span id="year"></span> Saidur Rahman Riyadh | All Rights Reserved</p>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
   </footer>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* ============================
+       PHOTO BOOTH CONFIG + DATA
+       ============================ */
+    const photos = [
+      {
+        src: "https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/Coxsbazar.JPG?raw=true",
+        title: "Cox's Bazar",
+        caption: "Longest natural sea beach in the world — a calm horizon."
+      },
+      {
+        src: "https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/kaptai-suptodhara%20jhorna.jpg?raw=true",
+        title: "Kaptai Suptodhara",
+        caption: "Hidden waterfall trail in Kaptai — fresh, green, and serene."
+      },
+      {
+        src: "https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/Military%20Museum.jpg?raw=true",
+        title: "Bangladesh Military Museum",
+        caption: "A glimpse into defense heritage and engineering marvels."
+      },
+      {
+        src: "https://github.com/SaidurRahmanRiyadh/portfolio/blob/main/sitakunda.jpg?raw=true",
+        title: "Sitakunda Hills",
+        caption: "Cloud-kissed ridgelines and rainforest textures."
+      }
+    ];
+
+    const galleryEl = document.getElementById("gallery");
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lb-image");
+    const lbCaption = document.getElementById("lb-caption");
+    const lbIndex = document.getElementById("lb-index");
+    const lbThumbs = document.getElementById("lb-thumbs");
+    const navPrev = document.getElementById("navPrev");
+    const navNext = document.getElementById("navNext");
+    const closeLb = document.getElementById("closeLb");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const playBtn = document.getElementById("playBtn");
+    const openLightboxBtn = document.getElementById("openLightbox");
+    const toggleAutoplayBtn = document.getElementById("toggleAutoplay");
+    const toggleFullscreenBtn = document.getElementById("toggleFullscreen");
+    const media = document.getElementById("lb-media");
+
+    let current = 0;
+    let playing = false;
+    let autoplayTimer = null;
+    const AUTOPLAY_MS = 3000;
+
+    /* Build gallery cards */
+    function buildGallery() {
+      galleryEl.innerHTML = "";
+      photos.forEach((p, i) => {
+        const card = document.createElement("article");
+        card.className = "card";
+        card.innerHTML = `
+          <button type="button" aria-label="Open ${p.title}" data-index="${i}">
+            <img loading="lazy" decoding="async" src="${p.src}" alt="${p.title}">
+          </button>
+          <div class="meta">
+            <div class="title">${p.title}</div>
+            <div class="caption">${p.caption}</div>
+          </div>
+        `;
+        card.querySelector("button").addEventListener("click", () => openLightbox(i));
+        galleryEl.appendChild(card);
+      });
+    }
+
+    /* Build thumbnails for lightbox */
+    function buildThumbs() {
+      lbThumbs.innerHTML = "";
+      photos.forEach((p, i) => {
+        const t = document.createElement("button");
+        t.className = "thumb";
+        t.setAttribute("aria-label", "Go to " + p.title);
+        t.innerHTML = `<img loading="lazy" src="${p.src}" alt="">`;
+        t.addEventListener("click", () => go(i));
+        lbThumbs.appendChild(t);
+      });
+    }
+
+    /* Open/Close Lightbox */
+    function openLightbox(i = 0) {
+      current = i;
+      lb.classList.add("open");
+      document.body.style.overflow = "hidden";
+      buildThumbs();
+      go(current, {skipFocus:false});
+    }
+    function closeLightbox() {
+      lb.classList.remove("open");
+      document.body.style.overflow = "";
+      stop();
+    }
+
+    /* Navigation helpers */
+    function go(i, {skipFocus=true} = {}) {
+      current = (i + photos.length) % photos.length;
+      const p = photos[current];
+
+      // Update image
+      lbImg.src = ""; // clear first for fast switch on slow nets
+      lbImg.alt = p.title;
+      requestAnimationFrame(() => {
+        lbImg.src = p.src;
+      });
+
+      // Update meta
+      lbCaption.textContent = p.caption || p.title || "";
+      lbIndex.textContent = (current + 1) + " / " + photos.length;
+
+      // Active thumb
+      [...lbThumbs.children].forEach((el, idx) => {
+        el.classList.toggle("active", idx === current);
+      });
+
+      // Preload neighbors for smoother nav
+      const nextIdx = (current + 1) % photos.length;
+      const prevIdx = (current - 1 + photos.length) % photos.length;
+      preloadImage(photos[nextIdx].src);
+      preloadImage(photos[prevIdx].src);
+
+      if (!skipFocus) nextBtn.focus();
+    }
+    function next() { go(current + 1); }
+    function prev() { go(current - 1); }
+
+    function preloadImage(src) {
+      const img = new Image();
+      img.src = src;
+    }
+
+    /* Autoplay */
+    function play() {
+      if (playing) return;
+      playing = true;
+      playBtn.setAttribute("aria-pressed", "true");
+      toggleAutoplayBtn.setAttribute("aria-pressed", "true");
+      autoplayTimer = setInterval(next, AUTOPLAY_MS);
+    }
+    function stop() {
+      playing = false;
+      playBtn.setAttribute("aria-pressed", "false");
+      toggleAutoplayBtn.setAttribute("aria-pressed", "false");
+      if (autoplayTimer) clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+    function togglePlay() { playing ? stop() : play(); }
+
+    /* Fullscreen for the section (not mandatory) */
+    function toggleFullscreen() {
+      const el = document.documentElement;
+      if (!document.fullscreenElement) {
+        el.requestFullscreen?.();
+      } else {
+        document.exitFullscreen?.();
+      }
+    }
+
+    /* Keyboard controls */
+    function onKey(e) {
+      if (!lb.classList.contains("open")) return;
+      switch (e.key) {
+        case "Escape": closeLightbox(); break;
+        case "ArrowRight": next(); break;
+        case "ArrowLeft": prev(); break;
+        case " ": e.preventDefault(); togglePlay(); break;
+        case "Home": go(0); break;
+        case "End": go(photos.length - 1); break;
+      }
+    }
+
+    /* Click & focusable navigation zones */
+    navPrev.addEventListener("click", prev);
+    navNext.addEventListener("click", next);
+    navPrev.addEventListener("keydown", (e)=>{ if(e.key==="Enter"||e.key===" ") { e.preventDefault(); prev(); }});
+    navNext.addEventListener("keydown", (e)=>{ if(e.key==="Enter"||e.key===" ") { e.preventDefault(); next(); }});
+
+    /* Buttons */
+    closeLb.addEventListener("click", closeLightbox);
+    prevBtn.addEventListener("click", prev);
+    nextBtn.addEventListener("click", next);
+    playBtn.addEventListener("click", togglePlay);
+    openLightboxBtn.addEventListener("click", ()=> openLightbox(0));
+    toggleAutoplayBtn.addEventListener("click", togglePlay);
+    toggleFullscreenBtn.addEventListener("click", toggleFullscreen);
+
+    /* Download/original open */
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+      const p = photos[current];
+      window.open(p.src, "_blank", "noopener");
+    });
+
+    /* Close on backdrop click (outside media area) */
+    lb.addEventListener("click", (e) => {
+      const stage = e.target.closest(".lb-stage");
+      if (!stage) closeLightbox();
+    });
+
+    /* Touch swipe support */
+    (function addSwipe(el) {
+      let x0 = null, y0 = null, t0 = 0;
+      el.addEventListener("touchstart", (e)=>{
+        const t = e.changedTouches[0]; x0 = t.clientX; y0 = t.clientY; t0 = Date.now();
+      }, {passive:true});
+      el.addEventListener("touchend", (e)=>{
+        if (x0===null) return;
+        const t = e.changedTouches[0];
+        const dx = t.clientX - x0;
+        const dy = t.clientY - y0;
+        const dt = Date.now() - t0;
+        const fast = dt < 500;
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40 && fast) {
+          dx < 0 ? next() : prev();
+        }
+        x0 = y0 = null;
+      }, {passive:true});
+    })(media);
+
+    /* Deep-link: #photo=INDEX */
+    function checkHash() {
+      const m = location.hash.match(/photo=(\d+)/);
+      if (m) {
+        const idx = Math.max(0, Math.min(photos.length - 1, parseInt(m[1], 10)));
+        openLightbox(idx);
+      }
+    }
+    window.addEventListener("hashchange", checkHash);
+
+    /* Init */
+    buildGallery();
+    document.addEventListener("keydown", onKey);
+    checkHash();
+  </script>
 </body>
 </html>
+
