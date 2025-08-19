@@ -499,7 +499,7 @@
       photos.forEach((p, i) => {
         const card = document.createElement("article");
         card.className = "card";
-        card.innerHTML = 
+        card.innerHTML = `
           <button type="button" aria-label="Open ${p.title}" data-index="${i}">
             <img loading="lazy" decoding="async" src="${p.src}" alt="${p.title}">
           </button>
@@ -507,7 +507,7 @@
             <div class="title">${p.title}</div>
             <div class="caption">${p.caption}</div>
           </div>
-        ;
+        `;
         card.querySelector("button").addEventListener("click", () => openLightbox(i));
         galleryEl.appendChild(card);
       });
@@ -520,7 +520,7 @@
         const t = document.createElement("button");
         t.className = "thumb";
         t.setAttribute("aria-label", "Go to " + p.title);
-        t.innerHTML = <img loading="lazy" src="${p.src}" alt="">;
+        t.innerHTML = `<img loading="lazy" src="${p.src}" alt="">`;
         t.addEventListener("click", () => go(i));
         lbThumbs.appendChild(t);
       });
