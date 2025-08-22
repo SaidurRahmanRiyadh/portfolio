@@ -101,26 +101,68 @@
 
 
 
-.experience-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
-}
-.experience-gallery img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.experience-gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-}
+/* Experience Gallery */
+    .experience-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .experience-gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .experience-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    }
 
-
+    /* Lightbox Modal */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(255,255,255,0.2);
+    }
+    .lightbox:target {
+      display: flex;
+    }
+    .lightbox a {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2em;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 50%;
+    }
+    .lightbox a.prev { left: 30px; }
+    .lightbox a.next { right: 30px; }
+    .lightbox a.close {
+      top: 20px;
+      right: 30px;
+      transform: none;
+      font-size: 2.5em;
+    }
 
 
 
@@ -355,7 +397,7 @@
 <!-- ===== EXPERIENCE ===== -->
 <section id="experience">
   <h2>Experience</h2>
-  <p><strong>Industrial Training:</strong> Teletalk Bangladesh Limited (18 May 2025)</p>
+  <p><strong>Industrial Training:</strong> Teletalk Bangladesh Limited (Start from 18 May 2025)</p>
 
   <div class="experience-gallery">
     <img src="https://github.com/SaidurRahmanRiyadh/Photoes/blob/main/TBL-00.jpg?raw=true" alt="Industrial Training 1">
